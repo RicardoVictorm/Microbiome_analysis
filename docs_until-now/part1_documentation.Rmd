@@ -139,7 +139,7 @@ Then create a subdirectory and copy the files with the reads obtained from the s
 
 ```bash
 mkdir VL-data
-cp -v ~/AGRF_CAGRF16622_BPDNR/*.fastq.gz /VL-data/
+cp -v ~/ref_code_seq/*.fastq.gz /VL-data/
 ```
 
 After copying the fastaq files to the new directory, in this case, it was necessary to rename the samples to the correct name format associated analysis (*Casava 1.8 paired-end*). As mentioned earlier, by default the file names of this format needed to display `001.fastq.gz` as the final part of its extension, after the `<readNum>`.
@@ -178,16 +178,16 @@ ___
 
 As said before the gene specific sequences used in this protocol target the 16S v3 and v4 region. Furthermore, *Illumina* adapter overghang nucleotide sequences are added to the gene specific sequences. the full length primer sequence, using standard IUPAC nucleotide nomenclature, to follow the protocol targetting the region:
 
-`16S Amplicon PCR Forward Primer = 5' TCGTCGGCAGCGTCAGATGTGTATAAGAGACAGCCTACGGGNGGCWGCAG`
+`16S Amplicon PCR Forward Primer = 5' TCGTCGG........CAG`(Info. of Prime Restrict!)
 
-`16S Amplicon PCR Reverse Primer = 5' GTCTCGTGGGCTCGGAGATGTGTATAAGAGACAGGACTACHVGGGTATCTAATCC`
+`16S Amplicon PCR Reverse Primer = 5' GTCTCGT........TCC`(Info. of Prime Restrict!)
 
 
 The method consists of the overhang adapter sequence to be added to the locus-specific primer for the region to be targeted. The Illumina overhang adapter sequences to be added to locu-specific sequences are (reference):
 
-`Forward overhang: 5’ TCGTCGGCAGCGTCAGATGTGTATAAGAGACAG   [locus specific sequence]`
+`Forward overhang: 5’ TCGTCG...AGAGACAG   [locus specific sequence]` (Info. of locus Restrict!)
 
-`Reverse overhang: 5’ GTCTCGTGGGCTCGGAGATGTGTATAAGAGACAG  [locus specific sequence]`
+`Reverse overhang: 5’ GTCTCG...GAGACAG  [locus specific sequence]` (Info. oflocus Restrict!)
 
 As an essential step for continuing the process it is necessary that such sequences be removed from the final dataset for analysis.
 
@@ -204,8 +204,8 @@ Find and remove fist the adapters in demultiplexed paired-end sequences, then re
 qiime cutadapt trim-paired \
   --i-demultiplexed-sequences VL_faecal_v1.qza \
   --p-cores 16 \
-  --p-front-f TCGTCGGCAGCGTCAGATGTGTATAAGAGACAG \
-  --p-front-r GTCTCGTGGGCTCGGAGATGTGTATAAGAGACAG \
+  --p-front-f TCGT.....ACAG \
+  --p-front-r GTCT.....ACAG \
   --p-error-rate 0.1 \
   --o-trimmed-sequences adapter-trimmed-VL_faecal \
   --verbose
@@ -216,8 +216,8 @@ qiime cutadapt trim-paired \
 qiime cutadapt trim-paired \
 --i-demultiplexed-sequences adapter-trimmed-VL_faecal.qza \
 --p-cores 16 \
---p-front-f CCTACGGGNGGCWGCAG \
---p-front-r GACTACHVGGGTATCTAATCC \
+--p-front-f CC.......CAG \
+--p-front-r GA.......TCC \
 --p-error-rate 0.1 \
 --o-trimmed-sequences primer-trimmed-VL_faecal \
 --verbose
@@ -386,8 +386,8 @@ It was provide a Silva-based 16S classifiers to carry out the taxonomic analysis
 ```bash
 qiime feature-classifier extract-reads \
 --i-sequences 99_otus.qza \
---p-f-primer CCTACGGGNGGCWGCAG \
---p-r-primer GACTACHVGGGTATCTAATCC \
+--p-f-primer CCTA.....CAG \
+--p-r-primer GAC......TCC \
 --o-reads ref-seqs.qza
 ```
 
