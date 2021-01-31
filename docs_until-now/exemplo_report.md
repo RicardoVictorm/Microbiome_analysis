@@ -4,7 +4,7 @@ author: "Almeida, R.V.M."
 date: "`r Sys.Date()`"
 ---
 
-# Introduction {#intro}
+# Introduction
 
 ## Primary analysis
 
@@ -119,7 +119,7 @@ md5sum -c checksums.md5
 
 ___
 
-# Pre-Processing {#process}
+# Pre-Processing 
 
 
 All *commands* were based on the use of QIIME™ 2 software to perform an analysis of human microbiome samples. This documentation assumes have installed QIIME™ 2 using the procedures in [documentation of software](http://qiime2.org/).
@@ -248,7 +248,7 @@ qiime tools view demux-summary-VL_faecal.qzv
 This views (**Fig.01-02**) shows an overview of the range of quality values across all bases at each position. It can be observed that the quality of the readings seems to tend to decrease the larger their size in the distribution, which is evident at the end of both figures.
 
 
-# Quality Control Methods {#quali}
+# Quality Control Methods
 
 QIIME™ 2 *plugins* are available for several quality control methods, including [DADA2](https://www.ncbi.nlm.nih.gov/pubmed/27214047). This is a pipeline for detecting and correcting (where possible) Illumina amplicon sequence data. As implemented in the `q2-dada2 plugin`, this quality control process will additionally filter any phiX reads (commonly present in marker gene Illumina sequence data) that are identified in the sequencing data, and will filter chimeric sequences.
 
@@ -307,7 +307,7 @@ The **“interactive Sample Detail”** tab (**Fig.03**) of the viewer gives you
 ___
 
 
-# Phylogenetic Classification {#phylo}
+# Phylogenetic Classification
 
 
 ## Generate a Tree for Phylogenetic diversity analyses
@@ -396,7 +396,7 @@ qiime feature-classifier fit-classifier-naive-bayes \
 
 ___
 
-# Taxonomic analysis (OTU) {#taxon}
+# Taxonomic analysis (OTU)
 
 
 ## Assigning taxonomy to the OTU table
@@ -426,7 +426,7 @@ to be continued...
 
 \newpage
 
-# Alpha and Beta diversity {#diversity}
+# Alpha and Beta diversity
 
 ## Alpha rarefaction
 
