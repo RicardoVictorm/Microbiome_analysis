@@ -241,9 +241,9 @@ With this result it is possible to determine the number of sequences that were o
 qiime tools view demux-summary-VL_faecal.qzv
 ```
 
-![Quality of the Forward Reads](~/Desktop/Results_v4/fig_report/version2_figs/demux summary VL_faecal_v2_f.png)
+![Quality of the Forward Reads](https://github.com/RicardoVictorm/Microbiome_analysis/blob/master/fig_report/version2_figs/demux%20summary%20VL_faecal_v2_f.png)
 
-![Quality of the Reverse Reads](~/Desktop/Results_v4/fig_report/version2_figs/demux summary VL_faecal_v2_r.png){width=85%}
+![Quality of the Reverse Reads](https://github.com/RicardoVictorm/Microbiome_analysis/blob/master/fig_report/version2_figs/demux%20summary%20VL_faecal_v2_r.png){width=85%}
 
 This views (**Fig.01-02**) shows an overview of the range of quality values across all bases at each position. It can be observed that the quality of the readings seems to tend to decrease the larger their size in the distribution, which is evident at the end of both figures.
 
