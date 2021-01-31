@@ -292,8 +292,8 @@ qiime feature-table tabulate-seqs \
 ```
 
 <center>
-![](~/Desktop/Results_v4/fig_report/version2_figs/table qzv_View.png){width=50%}
-![Frequency per sample](~/Desktop/Results_v4/fig_report/demux\ summary\ VL_Bar_View.png){width=60%}
+![](https://github.com/RicardoVictorm/Microbiome_analysis/blob/master/fig_report/version2_figs/table%20qzv_View.png){width=50%}
+![Frequency per sample](https://github.com/RicardoVictorm/Microbiome_analysis/blob/master/fig_report/demux%20summary%20VL_Bar_View.png){width=60%}
 </center>
 
 
